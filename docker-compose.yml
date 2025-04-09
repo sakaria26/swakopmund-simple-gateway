@@ -1,0 +1,41 @@
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - swakopmund
+    environment:
+      NGINX_HOST: localhost
+      NGINX_PORT: 80
+
+  welcome-service:
+    container_name: welcome-service
+    image: nginx:latest
+    volumes:
+      - ./welcome/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./welcome/html:/usr/share/nginx/html
+    ports:
+      - "5080:5080"
+    networks:
+      - swakopmund
+
+  goodbye-service:
+    container_name: goodbye-service
+    image: nginx:latest
+    volumes:
+      - ./goodbye/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./goodbye/html:/usr/share/nginx/html
+    ports:
+      - "6080:6080"
+    networks:
+      - swakopmund
+
+  
+networks:
+  swakopmund:
+    driver: bridge

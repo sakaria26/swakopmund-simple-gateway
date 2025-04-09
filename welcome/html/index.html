@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Message</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 100, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        h1 {
+            color: #4169e1;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #4169e1;
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello there!</h1>
+        <p>Welcome to our website. We're <span class="highlight">delighted</span> to have you here!</p>
+        <p>Feel free to explore and discover all the amazing content we have to offer.</p>
+    </div>
+</body>
+</html>
